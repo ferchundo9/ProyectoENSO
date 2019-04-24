@@ -2,9 +2,7 @@ package analisis;
 
 public class Alarma {
 	private String nombre;
-
-	private Alarma(String nombre) {
-		super();
+	public Alarma(String nombre) {
 		this.nombre = nombre;
 	}
 

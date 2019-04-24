@@ -1,5 +1,9 @@
 package analisis;
 
+import java.util.HashMap;
+
+import sensorizacion.DatosVitales;
+
 public interface InterfazDatosInstantaneos {
-	public void EnviarDatosInstantaneos();
+	public void EnviarDatosInstantaneos(HashMap<String, DatosVitales> datos);
 }

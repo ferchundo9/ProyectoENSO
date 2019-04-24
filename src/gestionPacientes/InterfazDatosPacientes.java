@@ -1,5 +1,7 @@
 package gestionPacientes;
 
+import java.util.HashMap;
+
 public interface InterfazDatosPacientes {
-	public void RecibirDatos();
+	public HashMap<String,Paciente> RecibirDatos();
 }

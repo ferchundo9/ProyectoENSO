@@ -1,25 +1,24 @@
 package sensorizacion;
 
 public class DatosVitales {
-	public double FC;
-	public double Temperatura;
+	private Double FC;
+	private Double Temperatura;
 	
-	private DatosVitales(double fC, double temperatura) {
-		super();
-		FC = fC;
-		Temperatura = temperatura;
+	public DatosVitales(double fC, double temperatura) {
+		this.FC = fC;
+		this.Temperatura = temperatura;
 	}
 	
-	public double getFC() {
+	public Double getFC() {
 		return FC;
 	}
-	public void setFC(double fC) {
+	public void setFC(Double fC) {
 		FC = fC;
 	}
-	public double getTemperatura() {
+	public Double getTemperatura() {
 		return Temperatura;
 	}
-	public void setTemperatura(double temperatura) {
+	public void setTemperatura(Double temperatura) {
 		Temperatura = temperatura;
 	}
 	

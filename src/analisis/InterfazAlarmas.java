@@ -1,5 +1,7 @@
 package analisis;
 
+import java.util.HashMap;
+
 public interface InterfazAlarmas {
-	public void recibirAlarmas();
+	public HashMap<String, Alarma> recibirAlarmas();
 }

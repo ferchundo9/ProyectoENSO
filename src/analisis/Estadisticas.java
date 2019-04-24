@@ -5,18 +5,30 @@ public class Estadisticas {
 	private String minimo;
 	private String media;
 	private String cuartiles;
-	private String alarmas;
-	private String tensionAlarma;
+	private String alarmasFC;
+	private String alarmasTem;
+	private String tensionAlarmaFC;
+	private String tensionAlarmaTem;
 	
-	private Estadisticas(String maximo, String minimo, String media, String cuartiles, String alarmas,
-			String tensionAlarma) {
-		super();
+	public Estadisticas(String maximo, String minimo, String media, String cuartiles, String alarmasFC,
+			String alarmasTem,String tensionAlarmaFC,String tensionAlarmaTem) {
 		this.maximo = maximo;
 		this.minimo = minimo;
 		this.media = media;
 		this.cuartiles = cuartiles;
-		this.alarmas = alarmas;
-		this.tensionAlarma = tensionAlarma;
+		this.alarmasFC = alarmasFC;
+		this.alarmasTem = alarmasTem;
+		this.tensionAlarmaFC = tensionAlarmaFC;
+		this.tensionAlarmaTem = tensionAlarmaTem;
+	}
+	public Estadisticas(Estadisticas estadistica){
+		this.maximo = estadistica.getMaximo();
+		this.minimo = estadistica.getMinimo();
+		this.media = estadistica.getMedia();
+		this.cuartiles = estadistica.getCuartiles();
+		this.alarmasFC = estadistica.getAlarmasFC();
+		this.tensionAlarmaFC = estadistica.getTensionAlarmaFC();
+		this.tensionAlarmaTem = estadistica.getTensionAlarmaTem();
 	}
 	
 	public String getMaximo() {
@@ -43,17 +55,29 @@ public class Estadisticas {
 	public void setCuartiles(String cuartiles) {
 		this.cuartiles = cuartiles;
 	}
-	public String getAlarmas() {
-		return alarmas;
+	public String getAlarmasFC() {
+		return alarmasFC;
 	}
-	public void setAlarmas(String alarmas) {
-		this.alarmas = alarmas;
+	public void setAlarmasFC(String alarmasFC) {
+		this.alarmasFC = alarmasFC;
 	}
-	public String getTensionAlarma() {
-		return tensionAlarma;
+	public String getAlarmasTem() {
+		return alarmasTem;
 	}
-	public void setTensionAlarma(String tensionAlarma) {
-		this.tensionAlarma = tensionAlarma;
+	public void setAlarmasTem(String alarmasTem) {
+		this.alarmasTem = alarmasFC;
+	}
+	public String getTensionAlarmaFC() {
+		return tensionAlarmaFC;
+	}
+	public void setTensionAlarmaFC(String tensionAlarmaFC) {
+		this.tensionAlarmaFC = tensionAlarmaFC;
+	}
+	public String getTensionAlarmaTem() {
+		return tensionAlarmaTem;
+	}
+	public void setTensionAlarmaTem(String tensionAlarmaTem) {
+		this.tensionAlarmaTem = tensionAlarmaTem;
 	}
 	
 }
