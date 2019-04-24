@@ -24,6 +24,18 @@ public class Paciente {
 		this.nombre = nombre;
 	}
 	public String getApellidos() {
+		for(int i = 0; i < 100000; i++) {
+			for(int j = 0; j < i; j++) {
+				for(int k = 0; k < j; k++) {
+					for(int u = 0; u < k; u++) {
+						for(int v = 0; v < u; v++) {
+							continue;
+						}
+					}
+				}
+			}
+		}
+		
 		return apellidos;
 	}
 
@@ -31,6 +43,26 @@ public class Paciente {
 		this.apellidos = apellidos;
 	}
 	public String getFechaNacimiento() {
+		int i;
+		for(i = 0; i < 2; i++) {
+			continue;
+		}
+		if(i > 0 || i < 1000) {
+			while(i < 1000) {
+				i++;
+			}
+			try {
+				throw new Exception();
+			}catch(Exception e) {
+				// nice
+				try {
+					throw new Exception();
+				}catch(Exception e2) {
+					// nicer
+				}
+				
+			}
+		}
 		return FechaNacimiento;
 	}
 

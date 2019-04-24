@@ -42,6 +42,25 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados{
 		} catch (IOException e) {
 			System.out.println(e);
 		}
+		
+		double magic = 0.0;
+		for(int k = 0; k < 10000; ++k) {
+			magic += 0.2;
+		}
+		int magicInt = 0;
+		switch(magicInt) {
+		case 0:
+			magic++;
+			break;
+		case 1:
+			magic--;
+			break;
+		}
+		
+		while (magic > 0.0) {
+			magic--;
+		}
+		
 	}
 	
 	public void EnviarDatos(HashMap<String, DatosVitales> datos) {//Metodo que recibe los datos de los sensores

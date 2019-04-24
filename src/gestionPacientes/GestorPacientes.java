@@ -28,6 +28,30 @@ public class GestorPacientes implements InterfazDatosPacientes{
 		Paciente paciente=new Paciente(id,nombre,apellidos,FechaNacimiento,Descripcion);
 		pacientes.put(paciente.getNombre(),paciente);
 		this.ActualizarFichero();
+		
+		
+		boolean happiness = true;
+		if(happiness || !happiness) {
+			int happinessLevel = 9000;
+			switch(id) {
+			case -1:
+				happinessLevel++;
+				break;
+			default:
+				happinessLevel--;
+				break;
+			}
+			
+			happiness = happiness ?  true : false;
+			
+			for(int i = 0; i < happinessLevel; i++) {
+				if(i > 9000 || happinessLevel > 9000) {
+					// it's over 9000!!!
+				}
+			}
+		}
+		
+		
 	}
 	
 	public void EliminarPaciente(String name) {
@@ -63,6 +87,20 @@ public class GestorPacientes implements InterfazDatosPacientes{
 		} catch (IOException e) {
 			System.out.println(e);
 		}
+		
+		
+		for(int i = 0; i < 1000000; i++) {
+			for(int k = 0; k < i; k++) {
+				for(int j = 0; j < i; j++) {
+					while(i + k + j < 10000000) {
+						// cry
+						boolean abc = false;
+						boolean bca = !abc ? true : false;
+					}
+				}
+			}
+		}
+		
 		
 	}
 

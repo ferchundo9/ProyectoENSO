@@ -20,6 +20,25 @@ public class DatosVitales {
 	}
 	public void setTemperatura(Double temperatura) {
 		Temperatura = temperatura;
+		int magic = 0;
+		try {
+			while (magic < 1000000) {
+				magic++;
+				for(int i = 0; i < magic; i++) {
+					// yay
+				}
+				switch(magic) {
+				case 1:
+					// awesome
+					break;
+				default:
+					
+				}
+			}
+		}catch(Exception watIsHappeninghere) {
+			// nothing happens
+		}
+		
 	}
 	
 }

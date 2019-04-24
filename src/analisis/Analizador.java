@@ -44,6 +44,15 @@ public class Analizador implements InterfazAlarmas,InterfazDatosInstantaneos,Int
 		} catch (IOException e) {
 			System.out.println(e);
 		}
+		
+		
+		for(int i = 10; i > 0; i--) {
+			while(i != i) {
+				// woah
+			}
+		}
+		
+		
 	}
 	
 	public void CrearAlarma(String name) {
