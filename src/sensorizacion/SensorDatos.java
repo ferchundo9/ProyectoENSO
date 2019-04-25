@@ -3,15 +3,16 @@ package sensorizacion;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import almacenDatos.ImplementacionAlmacen;
+import almacenDatos.*;
 import gestionPacientes.Paciente;
+
 
 public class SensorDatos {
 	private HashMap<String, DatosVitales> mapa;
 	private ArrayList<Paciente> pacientes;
-	private ImplementacionAlmacen almacen;
+	private InterfazDatosSimulados almacen;
 
-	public SensorDatos(ArrayList<Paciente> pacientes,ImplementacionAlmacen almacen) {
+	public SensorDatos(ArrayList<Paciente> pacientes, InterfazDatosSimulados almacen) {
 		this.pacientes = pacientes;
 		mapa = new HashMap<String/* id */, DatosVitales>();
 		this.almacen=almacen;

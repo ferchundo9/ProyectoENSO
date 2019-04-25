@@ -16,7 +16,7 @@ public class GestorPacientes implements InterfazDatosPacientes{
 		this.pacientes = new HashMap<>();
 	}
 
-	public void CrearPaciente(String nombre,String apellidos,String FechaNacimiento,String Descripcion) {
+	public Paciente registarPaciente(String nombre,String apellidos,String FechaNacimiento,String Descripcion) {
 		Integer id=-1;
 		Set<String> nombres=pacientes.keySet();
 		for(String name:nombres) {
@@ -51,11 +51,12 @@ public class GestorPacientes implements InterfazDatosPacientes{
 			}
 		}
 		
+		return paciente;
 		
 	}
 	
-	public void EliminarPaciente(String name) {
-		pacientes.remove(name);
+	public void EliminarPaciente(String id) {
+		pacientes.remove(id);
 		this.ActualizarFichero();
 	}
 	//Modificado
@@ -104,10 +105,6 @@ public class GestorPacientes implements InterfazDatosPacientes{
 		
 	}
 
-	@Override
-	public HashMap<String,Paciente> RecibirDatos() {
-		return new HashMap<>(pacientes);
-		
-	}
+	
 	
 }

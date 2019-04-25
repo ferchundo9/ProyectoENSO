@@ -13,7 +13,7 @@ public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, I
 	private HashMap<String, Estadisticas> estadisticas;
 	private HashMap<String, ArrayList<DatosVitales>> datos;
 
-	private Analizador() {
+	public Analizador() {
 		this.alarmas = new HashMap<>();
 		this.estadisticas = new HashMap<>();
 		this.datos = new HashMap<>();
