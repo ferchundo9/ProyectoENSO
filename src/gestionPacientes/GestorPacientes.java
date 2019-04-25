@@ -68,7 +68,7 @@ public class GestorPacientes implements InterfazDatosPacientes{
 	}
 	//Necesita comprobarse
 	public void ActualizarFichero() {
-		String archCSV = "";
+		String archCSV = "DatosPaciente.csv";
 		ArrayList<String[]> documento=new ArrayList<>();
 		String[] fila;
 		Set<String> nombres=pacientes.keySet();
