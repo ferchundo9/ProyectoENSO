@@ -85,7 +85,9 @@ public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, I
 				datos.get(key).add(datos2.get(key));
 			}
 			else {
-				
+				ArrayList<DatosVitales> datosVitales=new ArrayList<>();
+				datosVitales.add(datos2.get(key));
+				datos.put(key,datosVitales);
 			}
 		}
 	}
