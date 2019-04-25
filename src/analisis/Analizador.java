@@ -20,7 +20,7 @@ public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, I
 	}
 
 	public void GuardarEstadisticas() {
-		String archCSV = "";
+		String archCSV = "Estadisticas.csv";
 		ArrayList<String[]> documento = new ArrayList<>();
 		String[] fila;
 		Set<String> ids = estadisticas.keySet();
