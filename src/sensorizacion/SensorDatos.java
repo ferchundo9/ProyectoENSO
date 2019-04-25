@@ -19,7 +19,7 @@ public class SensorDatos {
 	}
 
 	public void CrearDatos() {
-		for(int j = 0; j < 100000; j++) {
+		for(int j = 0; j < 1000; j++) {
 			double fc;
 			double temp;
 			for (int i = 0; i < pacientes.size(); i++) {
