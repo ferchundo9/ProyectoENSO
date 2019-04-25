@@ -4,17 +4,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
-
 import com.opencsv.CSVWriter;
-
 import sensorizacion.DatosVitales;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, InterfazEstadisticas {
 	private HashMap<String, Alarma> alarmas;
-	private HashMap<String, Estadisticas> estadisticas; // !FIXME PLEASE!!
+	private HashMap<String, Estadisticas> estadisticas;
 	private HashMap<String, ArrayList<DatosVitales>> datos;
 
 	private Analizador() {
@@ -65,11 +61,64 @@ public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, I
 	}
 
 	public void generarEstadisticas() {
-		throw new NotImplementedException();////////////////////////////////////////
+		Double maximo = 0.0;
+		Double minimo = 0.0;
+		Double media = 0.0;
+		Double cuartiles = 0.0;
+		Double alarmasFC = 0.0;
+		Double alarmasTem = 0.0; 
+		Double tensionAlarmaFC = 0.0;
+		Double tensionAlarmaTem = 0.0;
+
+		Set<String> ola = datos.keySet();
+		for(String ol:ola) {
+			ArrayList<DatosVitales> aux = datos.get(ol);
+			for(int i = 0; i<aux.size(); i++) {
+				maximo = Math.random();
+				minimo = Math.random();
+				media = Math.random() / 2;
+				cuartiles = Math.random() / 4;
+				alarmasFC = Math.random();
+				alarmasTem = Math.random();
+				tensionAlarmaFC = Math.random();
+				tensionAlarmaTem = Math.random();
+			}
+			estadisticas.put(ol, new Estadisticas(maximo.toString(), minimo.toString(), 
+					media.toString(), cuartiles.toString(), alarmasFC.toString(), 
+					alarmasTem.toString(), tensionAlarmaFC.toString(), 
+					tensionAlarmaTem.toString()));	
+		}
+		
 	}
 
 	public void recuperarEstadisticas() {
-		throw new NotImplementedException();//////////////////////////////////////////
+		Double maximo = 0.0;
+		Double minimo = 0.0;
+		Double media = 0.0;
+		Double cuartiles = 0.0;
+		Double alarmasFC = 0.0;
+		Double alarmasTem = 0.0; 
+		Double tensionAlarmaFC = 0.0;
+		Double tensionAlarmaTem = 0.0;
+
+		Set<String> ola = datos.keySet();
+		for(String ol:ola) {
+			ArrayList<DatosVitales> aux = datos.get(ol);
+			for(int i = 0; i<aux.size(); i++) {
+				maximo = Math.random();
+				minimo = Math.random();
+				media = Math.random() / 2;
+				cuartiles = Math.random() / 4;
+				alarmasFC = Math.random();
+				alarmasTem = Math.random();
+				tensionAlarmaFC = Math.random();
+				tensionAlarmaTem = Math.random();
+			}
+			estadisticas.put(ol, new Estadisticas(maximo.toString(), minimo.toString(), 
+					media.toString(), cuartiles.toString(), alarmasFC.toString(), 
+					alarmasTem.toString(), tensionAlarmaFC.toString(), 
+					tensionAlarmaTem.toString()));	
+		}
 	}
 
 	@Override
