@@ -1,5 +1,6 @@
 package almacenDatos;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import sensorizacion.DatosVitales;
 

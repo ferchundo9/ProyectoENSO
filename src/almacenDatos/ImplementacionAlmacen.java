@@ -18,12 +18,12 @@ import sensorizacion.DatosVitales;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ImplementacionAlmacen implements InterfazDatosSimulados {
-	private ArrayList<HashMap<String, DatosVitales>> datos;
+	private HashMap<String, ArrayList<DatosVitales>> datos;
 	private ArrayList<Date> fechas;
 	private InterfazDatosInstantaneos interfazdatosinstantaneos;
 
 	public ImplementacionAlmacen() {
-		this.datos = new ArrayList<HashMap<String, DatosVitales>>();
+		this.datos = new HashMap<>();
 		this.fechas = new ArrayList<>();
 	}
 
@@ -69,32 +69,39 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 
 	}
 
-	public void EnviarDatos(HashMap<String, DatosVitales> datos) {// Metodo que recibe los datos de los sensores
-		this.datos.add(datos);
-		fechas.add(new Date());
-
+	public void EnviarDatos(HashMap<String, DatosVitales> datos4) {// Metodo que recibe los datos de los sensores
+		Set<String> keys=datos4.keySet();
+		for(String key:keys) {
+			if(datos.containsKey(key)) {
+				datos.get(key).add(datos4.get(key));
+			}
+			else {
+				ArrayList<DatosVitales> datosVitales=new ArrayList<>();
+				datosVitales.add(datos4.get(key));
+				datos.put(key,datosVitales);
+			}
+			fechas.add(new Date());
+		}
 	}
 
-	public void EntregarDatos(Date fechaInicio, Date fechaFin) {//-------REVISAR----(PERO MUCHO)---------
-		// throw new NotImplementedException();
-		HashMap<String, ArrayList<DatosVitales>> datos = new HashMap<>();
-		try (
-	            Reader reader = Files.newBufferedReader(Paths.get("Datos.csv"));
-	            CSVReader csvReader = new CSVReader(reader);
-	        ) {
-	            String[] nextDato;
-	            while ((nextDato = csvReader.readNext()) != null) {
-	            	DatosVitales datovital;
-	            	datovital=
-	            	datos.put(nextDato[0], );
-	            	datos.add(nextDato[0], );
-	            	datos.add(nextDato[0], );
-	            	datos.add(nextDato[0], );
-	            }
-        }catch (IOException e) {
-			System.out.println(e);
+	public void EntregarDatos(Date fechaInicio, Date fechaFin) {
+		HashMap<String, ArrayList<DatosVitales>> datosEntrega = new HashMap<>();
+		Set<String> keys=datos.keySet();
+		for(String key:keys) {
+			for(int i=0;i<datos.get(key).size();i++) {
+				Date fechaDato=fechas.get(i);
+				if(fechaDato.after(fechaInicio) && fechaDato.before(fechaFin)) {
+	        		if(datosEntrega.containsKey(key)) {
+	        			datosEntrega.get(key).add(datos.get(key).get(i));
+	        		}else {
+	        			ArrayList<DatosVitales> datosVitales=new ArrayList<>();
+	        			datosVitales.add(datos.get(key).get(i));
+	        			datosEntrega.put(key,datosVitales);
+	        		}
+	        	}
+			}
+			
 		}
-		
 	}
 
 	public void EnviarDatosInstantaneos(HashMap<String, DatosVitales> datos) {
