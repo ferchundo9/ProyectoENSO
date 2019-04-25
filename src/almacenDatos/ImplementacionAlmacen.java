@@ -15,7 +15,6 @@ import com.opencsv.CSVWriter;
 
 import analisis.InterfazDatosInstantaneos;
 import sensorizacion.DatosVitales;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ImplementacionAlmacen implements InterfazDatosSimulados {
 	private HashMap<String, ArrayList<DatosVitales>> datos;
@@ -82,7 +81,9 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 				datos.put(key,datosVitales);
 			}
 			fechas.add(new Date());
+			
 		}
+		this.EnviarDatosInstantaneos(datos4);
 	}
 
 	public void EntregarDatos(Date fechaInicio, Date fechaFin) {

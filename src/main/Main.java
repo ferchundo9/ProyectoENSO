@@ -9,11 +9,9 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("hi");
 		InterfazDatosPacientes gestorP = new GestorPacientes();
 		Paciente p1=gestorP.registarPaciente("Gonzalo", "Sanin Raña", "23/11/1996", "Muy solidario");
 		Paciente p2=gestorP.registarPaciente("Zalo", "Maria Pepe", "12/12/2012", "Adios");
-		
 		ArrayList<Paciente> arrayP = new ArrayList<>();
 		arrayP.add(p1);
 		arrayP.add(p2);
@@ -30,7 +28,6 @@ public class Main {
 		gestorP.ModificarPaciente("Zalo", "Sanchez", "Carla", "12/12/2012", "Adios");
 		
 		
-		System.out.println("bye");
 	}
 
 }

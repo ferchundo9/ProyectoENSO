@@ -27,7 +27,6 @@ public class SensorDatos {
 				temp = (Math.random() * ((45 - 30) + 1)) + 30;
 				mapa.put(Integer.toString(pacientes.get(i).getId()), new DatosVitales(fc, temp));
 			}
-
 			EnviarDatos();
 		}
 	}
