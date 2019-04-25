@@ -22,9 +22,10 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 	private ArrayList<Date> fechas;
 	private InterfazDatosInstantaneos interfazdatosinstantaneos;
 
-	public ImplementacionAlmacen() {
+	public ImplementacionAlmacen(InterfazDatosInstantaneos interfazdatosinstantaneos) {
 		this.datos = new HashMap<>();
 		this.fechas = new ArrayList<>();
+		this.interfazdatosinstantaneos=interfazdatosinstantaneos;
 	}
 
 	// Necesita revisarse

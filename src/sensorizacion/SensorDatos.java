@@ -11,9 +11,10 @@ public class SensorDatos {
 	private ArrayList<Paciente> pacientes;
 	private ImplementacionAlmacen almacen;
 
-	public SensorDatos(ArrayList<Paciente> pacientes) {
+	public SensorDatos(ArrayList<Paciente> pacientes,ImplementacionAlmacen almacen) {
 		this.pacientes = pacientes;
 		mapa = new HashMap<String/* id */, DatosVitales>();
+		this.almacen=almacen;
 	}
 
 	public void CrearDatos() {
