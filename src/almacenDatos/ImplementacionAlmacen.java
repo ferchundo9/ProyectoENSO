@@ -15,7 +15,6 @@ import com.opencsv.CSVWriter;
 
 import analisis.InterfazDatosInstantaneos;
 import sensorizacion.DatosVitales;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ImplementacionAlmacen implements InterfazDatosSimulados {
 	private HashMap<String, ArrayList<DatosVitales>> datos;
