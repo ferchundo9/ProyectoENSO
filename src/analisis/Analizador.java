@@ -51,13 +51,13 @@ public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, I
 
 	}
 
-	public void CrearAlarma(String name) {
+	public void CrearAlarma(String id,String name) {
 		Alarma alarma = new Alarma(name);
-		alarmas.put(alarma.getNombre(), alarma);
+		alarmas.put(id, alarma);
 	}
 
-	public void EliminarAlarma(String name) {
-		alarmas.remove(name);
+	public void EliminarAlarma(String id) {
+		alarmas.remove(id);
 	}
 
 	public void generarEstadisticas() {
@@ -137,6 +137,26 @@ public class Analizador implements InterfazAlarmas, InterfazDatosInstantaneos, I
 				ArrayList<DatosVitales> datosVitales=new ArrayList<>();
 				datosVitales.add(datos2.get(key));
 				datos.put(key,datosVitales);
+			}
+		}
+		for(String key:keys) {
+			if(datos2.get(key).getFC()<50 || datos2.get(key).getFC()>220 ) {//Alarma
+				if(!alarmas.containsKey(key)) {
+					this.CrearAlarma(key, "FC");
+				}
+			}else {
+				if(alarmas.containsKey(key)) {
+					this.EliminarAlarma(key);
+				}
+			}
+			if(datos2.get(key).getTemperatura()>38 || datos2.get(key).getTemperatura()<36) {
+				if(!alarmas.containsKey(key)) {
+					this.CrearAlarma(key, "Tem");
+				}
+			}else {
+				if(alarmas.containsKey(key)) {
+					this.EliminarAlarma(key);
+				}
 			}
 		}
 	}

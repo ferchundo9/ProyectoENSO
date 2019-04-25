@@ -24,7 +24,7 @@ public class Paciente {
 		this.nombre = nombre;
 	}
 	public String getApellidos() {
-		for(int i = 0; i < 100000; i++) {
+		for(int i = 0; i < 1; i++) {
 			for(int j = 0; j < i; j++) {
 				for(int k = 0; k < j; k++) {
 					for(int u = 0; u < k; u++) {

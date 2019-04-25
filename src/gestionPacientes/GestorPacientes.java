@@ -84,17 +84,23 @@ public class GestorPacientes implements InterfazDatosPacientes{
 		}
 		try {
 			CSVWriter writer = new CSVWriter(new FileWriter(archCSV),';');
-			writer.writeAll(documento);
+			for(int i=0;i<documento.size();i++) {
+				writer.writeNext(documento.get(i));
+				String[] pepe= {"\r\n"};
+				writer.writeNext(pepe);
+				
+			}
+			writer.close();
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-		
-		
-		for(int i = 0; i < 1000000; i++) {
-			for(int k = 0; k < i; k++) {
-				for(int j = 0; j < i; j++) {
-					while(i + k + j < 10000000) {
+		int k=0,j=0;
+		for(int i = 0; i < 1000; i++) {
+			for( ; k < i; k++) {
+				for( ; j < i; j++) {
+					while(i + k + j < 1000) {
 						// cry
+						i++;
 						boolean abc = false;
 						boolean bca = !abc ? true : false;
 					}

@@ -82,7 +82,9 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 				datos.put(key,datosVitales);
 			}
 			fechas.add(new Date());
+			
 		}
+		this.EnviarDatosInstantaneos(datos4);
 	}
 
 	public void EntregarDatos(Date fechaInicio, Date fechaFin) {
