@@ -1,22 +1,20 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f527a1d1a43605a88eb6d77b8905eeba46afe83
 package almacenDatos;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import analisis.InterfazDatosInstantaneos;
 import sensorizacion.DatosVitales;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ImplementacionAlmacen implements InterfazDatosSimulados {
 	private HashMap<String, ArrayList<DatosVitales>> datos;
@@ -113,6 +111,7 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 	}
 
 }
+<<<<<<< HEAD
 =======
 package almacenDatos;
 
@@ -228,3 +227,5 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 
 }
 
+=======
+>>>>>>> 3f527a1d1a43605a88eb6d77b8905eeba46afe83
