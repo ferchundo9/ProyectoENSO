@@ -1,4 +1,4 @@
-<<<<<<< HEAD:NuestroPrograma/src/almacenDatos/ImplementacionAlmacen.java
+
 package almacenDatos;
 
 import java.io.FileWriter;
@@ -227,4 +227,4 @@ public class ImplementacionAlmacen implements InterfazDatosSimulados {
 	}
 
 }
->>>>>>> c3bf2cc5a107184b7ba91408e4388c0016e4c3ba:src/almacenDatos/ImplementacionAlmacen.java
+
