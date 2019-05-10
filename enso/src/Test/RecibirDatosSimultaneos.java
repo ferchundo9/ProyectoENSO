@@ -105,11 +105,11 @@ class RecibirDatosSimultaneos {
 		almacen.recibirDatos(paciente);
 		String horaInicio="11:01";
 		String horaFin="13:30";
-		List<DatosPaciente> esperado=almacen.enviarDatos(horaInicio, horaFin, DNI);
-		assertEquals(datospacientes.get(0).getFrecuenciaCardiaca(), esperado.get(0).getFrecuenciaCardiaca());
-		assertEquals(datospacientes.get(0).getTemperatura(), esperado.get(0).getTemperatura());
-		assertEquals(datospacientes.get(0).getTension(), esperado.get(0).getTension());
-		assertEquals(datospacientes.get(0).getHora(), esperado.get(0).getHora());
+		List<DatosPaciente> obtenido=almacen.enviarDatos(horaInicio, horaFin, DNI);
+		assertEquals(datospacientes.get(0).getFrecuenciaCardiaca(), obtenido.get(0).getFrecuenciaCardiaca());
+		assertEquals(datospacientes.get(0).getTemperatura(), obtenido.get(0).getTemperatura());
+		assertEquals(datospacientes.get(0).getTension(), obtenido.get(0).getTension());
+		assertEquals(datospacientes.get(0).getHora(), obtenido.get(0).getHora());
 	}
 	
 	@Test
@@ -137,11 +137,10 @@ class RecibirDatosSimultaneos {
 		almacen.recibirDatos(paciente);
 		String horaInicio="11:01";
 		String horaFin="13:30";
-		List<DatosPaciente> esperado=almacen.enviarDatos(horaInicio, horaFin, DNI);
-		assertEquals(0, esperado.get(0).getFrecuenciaCardiaca());
-		assertEquals(0, esperado.get(0).getTemperatura());
-		assertEquals(null, esperado.get(0).getTension());
-		assertEquals(null, esperado.get(0).getHora());
+		List<DatosPaciente> real=almacen.enviarDatos(horaInicio, horaFin, DNI);
+		int obtenido=real.size();
+		int esperado=0;
+		assertEquals(esperado,obtenido);
 		
 	}
 
