@@ -140,7 +140,8 @@ class RecibirDatosSimultaneos {
 		List<DatosPaciente> real=almacen.enviarDatos(horaInicio, horaFin, DNI);
 		int obtenido=real.size();
 		int esperado=0;
-		assertEquals(esperado,obtenido);
+		
+		assertEquals(0, real.size());
 		
 	}
 
