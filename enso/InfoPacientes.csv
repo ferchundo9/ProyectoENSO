@@ -1,0 +1,20 @@
+dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
+dni,nombre,apellidos,nacimiento,false,false,false,false,false
+1,Santiago,Abascal,14/04/1976,true,false,false,false,false
+dni,nombre,apellidos,nacimiento,false,false,false,false,false
+1,Santiago,Abascal,14/04/1976,true,true,false,false,false
+1,Santiago,Abascal,14/04/1976,true,true,false,false,false
+dni,nombre,apellidos,nacimiento,false,false,false,false,false
+dni,nombre,apellidos,nacimiento,feq,false,false,false,false
+123,Santiago,Abascal,14/04/1976,Agua potable,true,true,true,false
+dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
+456,Santiago,Abascal,14/04/1976,Agua potable,true,true,true,false
+dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
+789,Santiago,Abascal,14/04/1976,Agua potable,true,true,true,false
+dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
+123,Santiago,Abascal,14/04/1976,Sucio,Agua potable,true,true,true
+123,Santiago,Abascal,14/04/1976,Sucio,Agua potable,true,true,true
+dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
+456,Santiago,Abascal,14/04/1976,Limipio,Agua potable,true,true,true
+dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
+789,Santiago,Abascal,14/04/1976,Limipio,Agua potable,true,true,true
