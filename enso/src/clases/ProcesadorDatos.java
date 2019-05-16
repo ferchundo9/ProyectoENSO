@@ -118,14 +118,10 @@ public class ProcesadorDatos implements DatosInstantaneos, Alarmas, Estadisticas
 
 	@Override
 	public List<Estadistica> enviarEstadisticas(String dni_paciente, String fechaInicio, String fechaFin) {
-		// TODO Auto-generated method stub
 		ArrayList<Estadistica> vector = new ArrayList<Estadistica>();
 		try {
-
 			CsvReader leer = new CsvReader("InfoEstadisticas.csv");
 			leer.readHeaders();
-
-			// Mentras haxa lineas obtemos os datos do archivo
 			while (leer.readRecord()) {
 				String id = leer.get(0);
 				String dni = leer.get(1);
@@ -149,17 +145,14 @@ public class ProcesadorDatos implements DatosInstantaneos, Alarmas, Estadisticas
 				String Q1Ten = leer.get(19);
 				String Q2Ten = leer.get(20);
 				String Q3Ten = leer.get(21);
-
 				String[] partsfechaInicio = fechaInicio.split(":");
 				String[] partsfechaFin = fechaFin.split(":");
 				String[] partsfecha = fecha.split(":");
-
 				if ((dni_paciente.equals(dni))) {
 					if (((Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaInicio[2])
 							&& Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaFin[2])
 							&& Integer.parseInt(partsfecha[1]) > Integer.parseInt(partsfechaInicio[1])
 							&& Integer.parseInt(partsfecha[1]) < Integer.parseInt(partsfechaFin[1]))
-
 							|| (Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaInicio[2])
 									&& Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaFin[2])
 									&& Integer.parseInt(partsfecha[1]) == Integer.parseInt(partsfechaFin[1])
@@ -175,15 +168,11 @@ public class ProcesadorDatos implements DatosInstantaneos, Alarmas, Estadisticas
 									&& Integer.parseInt(partsfecha[0]) > Integer.parseInt(partsfechaInicio[0]))) {
 						vector.add(new Estadistica(id, dni, fecha, hora, MaxTemp, MinTemp, MediaTemp, Q1Temp, Q2Temp,
 								Q3Temp, MaxTen, MinTen, MediaTen, Q1Ten, Q2Ten, Q3Ten, Maxfreq, MinFreq, MediaFreq,
-								Q1Freq, Q2Freq, Q3Freq));
-						
+								Q1Freq, Q2Freq, Q3Freq));	
 					}
 				}
-
 			}
-
 			leer.close(); // Cerrase o archivo
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("Exception " + e);
@@ -194,7 +183,6 @@ public class ProcesadorDatos implements DatosInstantaneos, Alarmas, Estadisticas
 			e.printStackTrace();
 			System.out.println("Exception " + e);
 		}
-
 		return (vector);
 	}
 

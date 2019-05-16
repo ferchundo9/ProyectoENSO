@@ -118,6 +118,12 @@ public class AlmacenDatos implements DatosSimulados, SeriesTemporales {
 								tension, hora));
 						System.out.println("enviarDatos realizado");
 					}
+					else if(dni=="-1"){
+						System.out.println("Algo");
+					}
+					else {
+						System.out.println("Algo");
+					}
 
 				}
 			}
