@@ -161,14 +161,14 @@ public class ProcesadorDatos implements DatosInstantaneos, Alarmas, Estadisticas
 						vector.add(new Estadistica(id, dni, fecha, hora, MaxTemp, MinTemp, MediaTemp, Q1Temp, Q2Temp,
 								Q3Temp, MaxTen, MinTen, MediaTen, Q1Ten, Q2Ten, Q3Ten, Maxfreq, MinFreq, MediaFreq,
 								Q1Freq, Q2Freq, Q3Freq));
-					}else if((Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaInicio[2])
-									&& Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaFin[2])
-									&& Integer.parseInt(partsfecha[1]) == Integer.parseInt(partsfechaInicio[1])
-									&& Integer.parseInt(partsfecha[1]) <= Integer.parseInt(partsfechaFin[1])
-									&& Integer.parseInt(partsfecha[0]) > Integer.parseInt(partsfechaInicio[0]))) {
+					} else if ((Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaInicio[2])
+							&& Integer.parseInt(partsfecha[2]) == Integer.parseInt(partsfechaFin[2])
+							&& Integer.parseInt(partsfecha[1]) == Integer.parseInt(partsfechaInicio[1])
+							&& Integer.parseInt(partsfecha[1]) <= Integer.parseInt(partsfechaFin[1])
+							&& Integer.parseInt(partsfecha[0]) > Integer.parseInt(partsfechaInicio[0]))) {
 						vector.add(new Estadistica(id, dni, fecha, hora, MaxTemp, MinTemp, MediaTemp, Q1Temp, Q2Temp,
 								Q3Temp, MaxTen, MinTen, MediaTen, Q1Ten, Q2Ten, Q3Ten, Maxfreq, MinFreq, MediaFreq,
-								Q1Freq, Q2Freq, Q3Freq));	
+								Q1Freq, Q2Freq, Q3Freq));
 					}
 				}
 			}

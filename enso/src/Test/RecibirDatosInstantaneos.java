@@ -12,7 +12,5 @@ import clases.*;
 import junit.framework.Assert;
 
 public class RecibirDatosInstantaneos {
-	
-	
 
 }
