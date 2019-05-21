@@ -12,6 +12,34 @@ import clases.*;
 import junit.framework.Assert;
 
 public class RecibirDatosInstantaneos {
+	
+	@Test
+	void test_02_0001() {
+		String DNI = "34567898B";
+		String Nombre = "Unai";
+		String Apellidos = "Vázquez Vázquez";
+		String FechaNacimiento = "16/02/1998";
+		String Descripcion = "Gran deportista";
+		String enfermedad = "Insuficiencia respiratoria";
+		String tratamiento = "Bombona de oxigeno";
+		boolean bolFeq = true;
+		boolean bolTemp = true;
+		boolean bolTen = true;
+		Sensores sensor = new Sensores();
+		ArrayList<Sensores> sensores = new ArrayList<>();
+		sensores.add(sensor);
+		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
+		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
+				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+		
+		ProcesadorDatos es = new ProcesadorDatos();
+		
+		try {
+			es.recibirDatos(paciente);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	void test_02_0002() {
