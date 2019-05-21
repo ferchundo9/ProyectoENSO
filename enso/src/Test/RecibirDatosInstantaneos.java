@@ -13,4 +13,21 @@ import junit.framework.Assert;
 
 public class RecibirDatosInstantaneos {
 
+	@Test
+	void test_02_0002() {
+
+	}
+
+	@Test
+	void test_02_0003() {
+		ProcesadorDatos es = new ProcesadorDatos();
+		Paciente p = null;
+
+		try {
+			es.recibirDatos(p);
+			fail("No ha lanzado excepción");
+		} catch (Exception e) {
+			assertEquals(1, 1);
+		}
+	}
 }

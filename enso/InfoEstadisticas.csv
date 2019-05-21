@@ -1,1 +1,6 @@
-0001,45961900B,02/04/2019,14:00,38.5,36,36.5,38,37,36,110,70,85,105,90,75,50,30,40,45,,40,40,35
+0001,45961900B,02/04/2019,14:00,38.5,36,36.5,38,37,36,110,70,85,105,90,75,50,30,40,45,,40,40,35id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp,mediatemp,q1temp,q2temp,q3temp,maxten,minten,mediaten,q1ten,q2ten,q3ten
+0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110
+id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp,mediatemp,q1temp,q2temp,q3temp,maxten,minten,mediaten,q1ten,q2ten,q3ten
+0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110
+id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp,mediatemp,q1temp,q2temp,q3temp,maxten,minten,mediaten,q1ten,q2ten,q3ten
+0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110
