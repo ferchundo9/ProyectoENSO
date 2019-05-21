@@ -15,19 +15,43 @@ public class RecibirDatosInstantaneos {
 
 	@Test
 	void test_02_0002() {
-
+		String DNI = "11111111B";
+		String Nombre = "NoRegistrado";
+		String Apellidos = "NoRegistrado";
+		String FechaNacimiento = "10/02/1998";
+		String Descripcion = "NoRegistrado";
+		String enfermedad = "NoRegistrado";
+		String tratamiento = "NoRegistrado";
+		boolean bolFeq = true;
+		boolean bolTemp = true;
+		boolean bolTen = true;
+		Sensores sensor = new Sensores();
+		ArrayList<Sensores> sensores = new ArrayList<>();
+		sensores.add(sensor);
+		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
+		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
+				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+		
+		ProcesadorDatos es = new ProcesadorDatos();
+		
+		try {
+			es.recibirDatos(paciente);
+			fail("No ha lanzado excepción");
+		} catch (Exception e) {
+			assertEquals(1, 1);	// Se lanzó excepción = éxito
+		}
 	}
 
 	@Test
 	void test_02_0003() {
 		ProcesadorDatos es = new ProcesadorDatos();
-		Paciente p = null;
+		Paciente paciente = null;
 
 		try {
-			es.recibirDatos(p);
+			es.recibirDatos(paciente);
 			fail("No ha lanzado excepción");
 		} catch (Exception e) {
-			assertEquals(1, 1);
+			assertEquals(1, 1);	// Se lanzó excepción = éxito
 		}
 	}
 }
