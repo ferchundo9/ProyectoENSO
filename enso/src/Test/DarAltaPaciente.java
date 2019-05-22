@@ -1,5 +1,4 @@
 package Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -11,10 +10,12 @@ import interfaces.*;
 import clases.*;
 import junit.framework.Assert;
 
-public class RecibirDatosInstantaneos {
+
+public class DarAltaPaciente {
 	
 	@Test
-	void test_02_0001() {
+	void test07_001() {
+		
 		String DNI = "34567898B";
 		String Nombre = "Unai";
 		String Apellidos = "Vázquez Vázquez";
@@ -31,25 +32,23 @@ public class RecibirDatosInstantaneos {
 		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+		GestorPacientes gestor=new GestorPacientes();
+		gestor.darDeAlta(paciente);
 		
-		ProcesadorDatos es = new ProcesadorDatos();
+		ArrayList<Paciente> pacientes =gestor.leerpacientes();
+		assertSame(paciente, pacientes.get(pacientes.size()-1));
 		
-		try {
-			es.recibirDatos(paciente);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
-
+	
 	@Test
-	void test_02_0002() {
-		String DNI = "11111111B";
-		String Nombre = "NoRegistrado";
-		String Apellidos = "NoRegistrado";
-		String FechaNacimiento = "10/02/1998";
-		String Descripcion = "NoRegistrado";
-		String enfermedad = "NoRegistrado";
-		String tratamiento = "NoRegistrado";
+	void test07_002() {
+		String DNI = "34567898B";
+		String Nombre = "Unai";
+		String Apellidos = "Vázquez Vázquez";
+		String FechaNacimiento = "16/02/1998";
+		String Descripcion = "Gran deportista";
+		String enfermedad = "Insuficiencia respiratoria";
+		String tratamiento = "Bombona de oxigeno";
 		boolean bolFeq = true;
 		boolean bolTemp = true;
 		boolean bolTen = true;
@@ -59,27 +58,17 @@ public class RecibirDatosInstantaneos {
 		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+		GestorPacientes gestor=new GestorPacientes();
+		assertThrows(Exception.class, ()->gestor.darDeAlta(paciente));
 		
-		ProcesadorDatos es = new ProcesadorDatos();
 		
-		try {
-			es.recibirDatos(paciente);
-			fail("No ha lanzado excepción");
-		} catch (Exception e) {
-			assertEquals(1, 1);	// Se lanzó excepción = éxito
-		}
 	}
-
+	
 	@Test
-	void test_02_0003() {
-		ProcesadorDatos es = new ProcesadorDatos();
-		Paciente paciente = null;
-
-		try {
-			es.recibirDatos(paciente);
-			fail("No ha lanzado excepción");
-		} catch (Exception e) {
-			assertEquals(1, 1);	// Se lanzó excepción = éxito
-		}
+	void test07_003() {
+		
+		GestorPacientes gestor=new GestorPacientes();
+		assertThrows(Exception.class, ()->gestor.darDeAlta(null));
 	}
+
 }

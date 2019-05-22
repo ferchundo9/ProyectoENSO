@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
 dni,nombre,apellidos,nacimiento,false,false,false,false,false
 dni,nombre,apellidos,nacimiento,false,false,false,false,false
@@ -34,3 +35,7 @@ dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
 dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
 648578,Santiago,Abascal,14/04/1976,Agua potable,true,true,true,false
 dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
+=======
+dni,fecha,hora,tension,frecuencia cardiaca,temperatura
+35567878D,10/4/2019,12:00,90,110,25.0
+>>>>>>> c5625ebe90c3fd2c03c313db0ea5a9646ec810a2
