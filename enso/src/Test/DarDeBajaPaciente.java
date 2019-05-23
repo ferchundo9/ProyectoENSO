@@ -29,24 +29,22 @@ public class DarDeBajaPaciente {
 		GestorPacientes gestor=new GestorPacientes();
 		gestor.darDeBaja(DNI);
 
-		//Lanza Excepción
+		assertThrows(Exception.class,() -> gestor.darDeBaja(DNI));
 	}
 
 	@Test
 	void test08_003() {
 		String DNI = "45961900Ñ";
 		GestorPacientes gestor=new GestorPacientes();
-		gestor.darDeBaja(DNI);
 
-		//Lanza Excepción
+		assertThrows(Exception.class,() -> gestor.darDeBaja(DNI));
 	}
 	
 	
 	@Test
 	void test08_004() {
 		GestorPacientes gestor=new GestorPacientes();
-		gestor.darDeBaja(null);
 
-		//Lanza Excepción
+		assertThrows(Exception.class,() -> gestor.darDeBaja(null));
 	}
 }
