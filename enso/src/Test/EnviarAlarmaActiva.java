@@ -30,26 +30,20 @@ public class EnviarAlarmaActiva {
 	void test06_002() {
 		String DNI = "Ola3647282812";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		ArrayList<Alarma> real = (ArrayList<Alarma>) procesador.enviarAlarmasActivas(DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(DNI));
 	}
 
 	@Test
 	void test06_003() {
 		String DNI = "45958207U";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		ArrayList<Alarma> real = (ArrayList<Alarma>) procesador.enviarAlarmasActivas(DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(DNI));
 	}
 	
 	@Test
 	void test06_004() {
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		ArrayList<Alarma> real = (ArrayList<Alarma>) procesador.enviarAlarmasActivas(null);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(null));
 	}
 	
 }
