@@ -39,3 +39,8 @@ dni,nombre,apellidos,nacimiento,tratamiento,feq,false,false,false
 dni,fecha,hora,tension,frecuencia cardiaca,temperatura
 35567878D,10/4/2019,12:00,90,110,25.0
 >>>>>>> c5625ebe90c3fd2c03c313db0ea5a9646ec810a2
+dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
+34567898B,Unai,Vázquez Vázquez,16/02/1998,Insuficiencia respiratoria,Bombona de oxigeno,true,true,true
+dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
+34567898B,Unai,Vázquez Vázquez,16/02/1998,Insuficiencia respiratoria,Bombona de oxigeno,true,true,true
+dni,nombre,apellidos,nacimiento,enfermedad,tratamiento,feq,temp,ten
