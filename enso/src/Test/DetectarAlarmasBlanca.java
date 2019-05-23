@@ -12,7 +12,7 @@ import clases.Paciente;
 import clases.ProcesadorDatos;
 import clases.Sensores;
 
-public class DetectarAlarmas {
+public class DetectarAlarmasBlanca {
 	@Test
 	public void test1() {
 		String DNI = "1";

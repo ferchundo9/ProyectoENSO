@@ -13,7 +13,7 @@ import clases.GestorPacientes;
 import clases.Paciente;
 import clases.Sensores;
 
-public class ModificarDatos {
+public class ModificarDatosBlanca {
 	@Test
 	public void test1() {
 		GestorPacientes gestorPacientes = new GestorPacientes();

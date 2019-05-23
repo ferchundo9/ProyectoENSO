@@ -14,7 +14,7 @@ import clases.GestorPacientes;
 import clases.Paciente;
 import clases.Sensores;
 
-public class DarDeBaja {
+public class DarDeBajaBlanca {
 	@Test
 	public void test1() {
 		GestorPacientes gestorPacientes = new GestorPacientes();

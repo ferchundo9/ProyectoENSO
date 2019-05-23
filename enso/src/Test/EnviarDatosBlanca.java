@@ -14,7 +14,7 @@ import clases.DatosPaciente;
 import clases.Paciente;
 import clases.Sensores;
 
-public class EnviarDatos {
+public class EnviarDatosBlanca {
 	@Test
 	public void test1() {
 		File file = new File("InfoSensores.csv");

@@ -14,7 +14,7 @@ import clases.Sensores;
 import interfaces.DatosPacientes;
 import junit.framework.Assert;
 
-class RecibirDatosSimultaneos {
+class RecibirDatosSimulados {
 
 	@Test
 	void testDatosGuardados() {
