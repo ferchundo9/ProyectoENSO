@@ -36,7 +36,8 @@ public class DarAltaPaciente {
 		gestor.darDeAlta(paciente);
 		
 		ArrayList<Paciente> pacientes =gestor.leerpacientes();
-		assertSame(paciente, pacientes.get(pacientes.size()-1));
+		
+		assertEquals(paciente.getDNI(), pacientes.get(pacientes.size()-1).getDNI());
 		
 	}
 	
