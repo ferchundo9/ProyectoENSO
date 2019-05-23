@@ -127,11 +127,8 @@ class RecibirDatosSimulados {
 		almacen.recibirDatos(paciente);
 		String horaInicio = "11:01";
 		String horaFin = "13:30";
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-		int obtenido = real.size();
-		int esperado = 0;
 
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->almacen.enviarDatos(horaInicio, horaFin, DNI));
 
 	}
 	

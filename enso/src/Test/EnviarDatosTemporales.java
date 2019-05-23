@@ -20,16 +20,15 @@ public class EnviarDatosTemporales {
 		String horaFin = "13:00";
 		AlmacenDatos almacen = new AlmacenDatos();
 		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-
-		if(real.size()==0) {
-			assertNotEquals(0, real.size());
-		}
-		else {
-			assertEquals(110, real.get(0).getFrecuenciaCardiaca());
-			assertEquals(25.0, real.get(0).getTemperatura());
-			assertEquals("90", real.get(0).getTension());
-			assertEquals("12:15", real.get(0).getHora());
-		}
+		
+		assertEquals(110, real.get(0).getFrecuenciaCardiaca());
+		assertEquals(25.0, real.get(0).getTemperatura());
+		assertEquals("90", real.get(0).getTension());			
+		assertEquals("12:15", real.get(0).getHora());
+		assertEquals(110, real.get(1).getFrecuenciaCardiaca());
+		assertEquals(25.0, real.get(1).getTemperatura());
+		assertEquals("90", real.get(1).getTension());			
+		assertEquals("12:30", real.get(1).getHora());
 
 	}
 
