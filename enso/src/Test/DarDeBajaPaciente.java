@@ -20,6 +20,10 @@ public class DarDeBajaPaciente {
 		gestor.darDeBaja(DNI);
 		
 		//Iterar los pacientes del archivo para ver si se eliminó el paciente que buscábamos
+		ArrayList<Paciente> array =gestor.leerpacientes();
+		for(int i=0; i<array.size(); i++) {
+			assertNotEquals(DNI, array.get(i).getDNI());
+		}
 
 	}
 
