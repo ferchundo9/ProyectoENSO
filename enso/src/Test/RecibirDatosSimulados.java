@@ -17,13 +17,13 @@ import junit.framework.Assert;
 class RecibirDatosSimulados {
 
 	@Test
-	void testDatosGuardados() {
-		String DNI = "63";
+	void test01_004() {
+		String DNI = "23415463F";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
 		String FechaNacimiento = "14/04/1976";
-		String Descripcion = "Nada de nah";
-		String enfermedad = "Limipio";
+		String Descripcion = "Vasco";
+		String enfermedad = "Arritmia cardiaca";
 		String tratamiento = "Agua potable";
 		boolean bolFeq = true;
 		boolean bolTemp = true;
@@ -38,12 +38,12 @@ class RecibirDatosSimulados {
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
 		almacen.recibirDatos(paciente);
-		List<DatosPaciente> datosRecibidos = almacen.enviarDatos("0:0", "23:59", "63");
+		List<DatosPaciente> datosRecibidos = almacen.enviarDatos("0:00", "23:59", "23415463F");
 		assertDoesNotThrow(() -> datosRecibidos.get(0));
 	}
 
-	@Test
-	void testDatosBienGuardados() {
+	
+	/*void testDatosBienGuardados() {
 		String DNI = "63";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
@@ -70,7 +70,7 @@ class RecibirDatosSimulados {
 		assertEquals(datos.getTemperatura(), 25.0);
 		assertEquals(datos.getTension(), "90");
 		assertEquals(datos.getHora(), "12:00");
-	}
+	}*/
 
 	@Test
 	void test01_001() {
