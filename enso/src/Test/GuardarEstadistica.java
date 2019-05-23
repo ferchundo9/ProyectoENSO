@@ -138,7 +138,14 @@ class GuardarEstadistica {
 				assertEquals(seHaVueltoAEscribir, false);
 				seHaVueltoAEscribir = true;
 			}
+		}*/
 		}
-		*/
-	}
+		
+		@Test
+		void test05_003() {
+			Estadistica estadistica = new Estadistica();
+			ProcesadorDatos procesador = new ProcesadorDatos();
+
+			assertThrows(Exception.class, ()->procesador.guardarEstadistica(null));
+		}
 }

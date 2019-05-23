@@ -7,3 +7,5 @@ id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp
 id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp,mediatemp,q1temp,q2temp,q3temp,maxten,minten,mediaten,q1ten,q2ten,q3ten
 0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110
 
+id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp,mediatemp,q1temp,q2temp,q3temp,maxten,minten,mediaten,q1ten,q2ten,q3ten
+0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110
