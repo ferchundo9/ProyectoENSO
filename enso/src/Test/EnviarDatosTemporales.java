@@ -34,9 +34,8 @@ public class EnviarDatosTemporales {
 		String horaInicio = "12:00";
 		String horaFin = "13:00";
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
 
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -46,9 +45,7 @@ public class EnviarDatosTemporales {
 		String horaFin = "13:00";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, DNI));
 
 	}
 
@@ -59,8 +56,7 @@ public class EnviarDatosTemporales {
 
 		AlmacenDatos almacen = new AlmacenDatos();
 
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, null);
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, null));
 	}
 
 	@Test
@@ -70,9 +66,7 @@ public class EnviarDatosTemporales {
 		String horaFin = "13:00";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() ->almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -82,9 +76,7 @@ public class EnviarDatosTemporales {
 		String horaFin = "13:00";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -94,9 +86,7 @@ public class EnviarDatosTemporales {
 		String horaFin = "13:00";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() ->almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -105,9 +95,7 @@ public class EnviarDatosTemporales {
 		String horaFin = "13:00";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(null, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
 	}
 
 	@Test
@@ -117,9 +105,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(null, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
 	}
 
 	@Test
@@ -129,9 +115,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(null, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
 	}
 
 	@Test
@@ -141,9 +125,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(null, horaFin, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
 	}
 
 	@Test
@@ -152,9 +134,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		List<DatosPaciente> real = almacen.enviarDatos(null, null, DNI);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class,() -> almacen.enviarDatos(null, null, DNI));
 	}
 
 }

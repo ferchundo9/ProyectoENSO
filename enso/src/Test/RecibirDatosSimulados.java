@@ -73,14 +73,6 @@ class RecibirDatosSimulados {
 	}
 
 	@Test
-	void PacienteNull() {
-
-		AlmacenDatos almacen = new AlmacenDatos();
-		Paciente paciente = null;
-		assertThrows(Exception.class, () -> almacen.recibirDatos(paciente));
-	}
-
-	@Test
 	void test01_001() {
 		String DNI = "45961900B";
 		String Nombre = "Diego";
@@ -141,6 +133,14 @@ class RecibirDatosSimulados {
 
 		assertEquals(0, real.size());
 
+	}
+	
+	@Test
+	void test01_003() {
+
+		AlmacenDatos almacen = new AlmacenDatos();
+		Paciente paciente = null;
+		assertThrows(Exception.class, () -> almacen.recibirDatos(paciente));
 	}
 
 }
