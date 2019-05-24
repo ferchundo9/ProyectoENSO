@@ -14,16 +14,16 @@ import clases.Sensores;
 import interfaces.DatosPacientes;
 import junit.framework.Assert;
 
-class RecibirDatosSimultaneos {
+class RecibirDatosSimulados {
 
 	@Test
-	void testDatosGuardados() {
-		String DNI = "63";
+	void CP_01_0004() {
+		String DNI = "23415463F";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
 		String FechaNacimiento = "14/04/1976";
-		String Descripcion = "Nada de nah";
-		String enfermedad = "Limipio";
+		String Descripcion = "Vasco";
+		String enfermedad = "Arritmia cardiaca";
 		String tratamiento = "Agua potable";
 		boolean bolFeq = true;
 		boolean bolTemp = true;
@@ -38,12 +38,12 @@ class RecibirDatosSimultaneos {
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
 		almacen.recibirDatos(paciente);
-		List<DatosPaciente> datosRecibidos = almacen.enviarDatos("0:0", "23:59", "63");
+		List<DatosPaciente> datosRecibidos = almacen.enviarDatos("0:00", "23:59", "23415463F");
 		assertDoesNotThrow(() -> datosRecibidos.get(0));
 	}
 
-	@Test
-	void testDatosBienGuardados() {
+	
+	/*void testDatosBienGuardados() {
 		String DNI = "63";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
@@ -70,18 +70,10 @@ class RecibirDatosSimultaneos {
 		assertEquals(datos.getTemperatura(), 25.0);
 		assertEquals(datos.getTension(), "90");
 		assertEquals(datos.getHora(), "12:00");
-	}
+	}*/
 
 	@Test
-	void PacienteNull() {
-
-		AlmacenDatos almacen = new AlmacenDatos();
-		Paciente paciente = null;
-		assertThrows(Exception.class, () -> almacen.recibirDatos(paciente));
-	}
-
-	@Test
-	void test01_001() {
+	void CP_01_0001() {
 		String DNI = "45961900B";
 		String Nombre = "Diego";
 		String Apellidos = "Varela Seijas";
@@ -112,7 +104,7 @@ class RecibirDatosSimultaneos {
 	}
 
 	@Test
-	void test01_002() {
+	void CP_01_0002() {
 		String DNI = "35567878D";
 		String Nombre = "Gonzalo";
 		String Apellidos = "Varela Seijas";
@@ -135,12 +127,17 @@ class RecibirDatosSimultaneos {
 		almacen.recibirDatos(paciente);
 		String horaInicio = "11:01";
 		String horaFin = "13:30";
-		List<DatosPaciente> real = almacen.enviarDatos(horaInicio, horaFin, DNI);
-		int obtenido = real.size();
-		int esperado = 0;
 
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->almacen.enviarDatos(horaInicio, horaFin, DNI));
 
+	}
+	
+	@Test
+	void CP_01_0003() {
+
+		AlmacenDatos almacen = new AlmacenDatos();
+		Paciente paciente = null;
+		assertThrows(Exception.class, () -> almacen.recibirDatos(paciente));
 	}
 
 }

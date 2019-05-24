@@ -9,15 +9,14 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import clases.DatosPaciente;
-import clases.GestorPacientes;
 import clases.Paciente;
+import clases.ProcesadorDatos;
 import clases.Sensores;
 
-public class ModificarDatos {
+public class DetectarAlarmasBlanca {
 	@Test
 	public void test1() {
-		GestorPacientes gestorPacientes = new GestorPacientes();
-		String DNI = "777";
+		String DNI = "1";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
 		String FechaNacimiento = "14/04/1976";
@@ -35,65 +34,70 @@ public class ModificarDatos {
 		datospacientes.add(datosPacientes);
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
-		ArrayList<Paciente> pacientes = gestorPacientes.leerpacientes();
-		boolean existe = false;
-		for (Paciente paciente1 : pacientes) {
-			if (paciente1.getDNI().equals("777")) {
-				existe = true;
-			}
-		}
-		assertTrue(!existe);
+		ProcesadorDatos procesadorDatos = new ProcesadorDatos();
+		procesadorDatos.detectarAlarma(paciente);
+		assertEquals(procesadorDatos.enviarAlarmasActivas("1").get(0).getGravedad(), "leve");
 	}
 
 	@Test
 	public void test2() {
-		GestorPacientes gestorPacientes = new GestorPacientes();
-		assertThrows(Exception.class, () -> gestorPacientes.modificarDatos(null));
+		String DNI = "2";
+		String Nombre = "Santiago";
+		String Apellidos = "Abascal";
+		String FechaNacimiento = "14/04/1976";
+		String Descripcion = "Nada de nah";
+		String enfermedad = "Limipio";
+		String tratamiento = "Agua potable";
+		boolean bolFeq = true;
+		boolean bolTemp = true;
+		boolean bolTen = true;
+		Sensores sensor = new Sensores();
+		ArrayList<Sensores> sensores = new ArrayList<>();
+		sensores.add(sensor);
+		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
+		DatosPaciente datosPacientes = new DatosPaciente(39, 30.0, "90", "12:00");
+		datospacientes.add(datosPacientes);
+		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
+				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+		ProcesadorDatos procesadorDatos = new ProcesadorDatos();
+		procesadorDatos.detectarAlarma(paciente);
+		assertEquals(procesadorDatos.enviarAlarmasActivas("2").get(0).getGravedad(), "moderada");
 	}
 
 	@Test
 	public void test3() {
-
+		String DNI = "3";
+		String Nombre = "Santiago";
+		String Apellidos = "Abascal";
+		String FechaNacimiento = "14/04/1976";
+		String Descripcion = "Nada de nah";
+		String enfermedad = "Limipio";
+		String tratamiento = "Agua potable";
+		boolean bolFeq = true;
+		boolean bolTemp = true;
+		boolean bolTen = true;
+		Sensores sensor = new Sensores();
+		ArrayList<Sensores> sensores = new ArrayList<>();
+		sensores.add(sensor);
+		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
+		DatosPaciente datosPacientes = new DatosPaciente(29, 28.0, "90", "12:00");
+		datospacientes.add(datosPacientes);
+		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
+				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+		ProcesadorDatos procesadorDatos = new ProcesadorDatos();
+		procesadorDatos.detectarAlarma(paciente);
+		assertEquals(procesadorDatos.enviarAlarmasActivas("3").get(0).getGravedad(), "grave");
 	}
 
 	@Test
 	public void test4() {
-		GestorPacientes gestorPacientes = new GestorPacientes();
-		String DNI = "123";
-		String Nombre = "Santiago";
-		String Apellidos = "Abascal";
-		String FechaNacimiento = "14/04/1976";
-		String Descripcion = "Nada de nah";
-		String enfermedad = "Limipio";
-		String tratamiento = "Agua potable";
-		boolean bolFeq = true;
-		boolean bolTemp = true;
-		boolean bolTen = true;
-		Sensores sensor = new Sensores();
-		ArrayList<Sensores> sensores = new ArrayList<>();
-		sensores.add(sensor);
-		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
-		DatosPaciente datosPacientes = new DatosPaciente(49, 32.0, "90", "12:00");
-		datospacientes.add(datosPacientes);
-		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
-				bolFeq, bolTemp, bolTen, sensores, datospacientes);
-		gestorPacientes.darDeAlta(paciente);
-		paciente.setEnfermedad("Sucio");
-		gestorPacientes.modificarDatos(paciente);
-		ArrayList<Paciente> pacientes = gestorPacientes.leerpacientes();
-		Paciente pacienteModificado = null;
-		for (Paciente paciente1 : pacientes) {
-			if (paciente1.getDNI().equals("123")) {
-				pacienteModificado = paciente1;
-			}
-		}
-		assertEquals(pacienteModificado.getEnfermedad(), "Sucio");
+		ProcesadorDatos procesadorDatos = new ProcesadorDatos();
+		assertThrows(Exception.class, () -> procesadorDatos.detectarAlarma(null));
 	}
 
 	@Test
 	public void test5() {
-		GestorPacientes gestorPacientes = new GestorPacientes();
-		String DNI = "456";
+		String DNI = "5";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
 		String FechaNacimiento = "14/04/1976";
@@ -107,23 +111,12 @@ public class ModificarDatos {
 		ArrayList<Sensores> sensores = new ArrayList<>();
 		sensores.add(sensor);
 		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
-		DatosPaciente datosPacientes = new DatosPaciente(49, 32.0, "90", "12:00");
+		DatosPaciente datosPacientes = new DatosPaciente(29, 28.0, "90", "12:00");
 		datospacientes.add(datosPacientes);
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
-		Paciente paciente2 = new Paciente("789", Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad,
-				tratamiento, bolFeq, bolTemp, bolTen, sensores, datospacientes);
-		gestorPacientes.darDeAlta(paciente);
-		gestorPacientes.darDeAlta(paciente2);
-		paciente.setEnfermedad("Sucio");
-		gestorPacientes.modificarDatos(paciente);
-		ArrayList<Paciente> pacientes = gestorPacientes.leerpacientes();
-		Paciente pacienteModificado = null;
-		for (Paciente paciente1 : pacientes) {
-			if (paciente1.getDNI().equals("456")) {
-				pacienteModificado = paciente1;
-			}
-		}
-		assertEquals(pacienteModificado.getEnfermedad(), "Sucio");
+		ProcesadorDatos procesadorDatos = new ProcesadorDatos();
+		procesadorDatos.detectarAlarma(paciente);
+		assertTrue(procesadorDatos.enviarAlarmasActivas("5").size()!=0);
 	}
 }

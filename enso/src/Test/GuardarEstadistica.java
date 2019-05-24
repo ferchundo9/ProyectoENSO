@@ -17,7 +17,7 @@ import clases.ProcesadorDatos;
 class GuardarEstadistica {
 
 	@Test
-	void test05_001() {
+	void CP_05_0001() {
 		String id = "0002";
 		String dni_paciente = "12345678A";
 		String fecha = "02/03/2019";
@@ -77,10 +77,9 @@ class GuardarEstadistica {
 	}
 	
 	
-	// Este test no es definitivo, todavía no está acabado, falta decidir si se puede hacer una prueba o no
 	@Test
-	void test05_002() {
-		/*
+	void CP_05_0002() {
+		
 		String id = "0002";
 		String dni_paciente = "12345678A";
 		String fecha = "02/03/2019";
@@ -108,37 +107,14 @@ class GuardarEstadistica {
 				maxTen, minTen, mediaTen, q1Ten, q2Ten, q3Ten, maxFreq, minFreq, mediaFreq, q1Freq, q2Freq, q3Freq);
 		ProcesadorDatos procesador = new ProcesadorDatos();
 		
-		try {
-			procesador.guardarEstadistica(est);
-		} catch (IOException e) {
-			e.printStackTrace();
+		assertThrows(Exception.class, ()->procesador.guardarEstadistica(est));
 		}
 		
-		BufferedReader reader;
-		List<String> lines = new ArrayList<>();
-		try {
-			reader = new BufferedReader(new FileReader("InfoEstadisticas.csv"));
-			String line = null;
-			while ((line = reader.readLine()) != null) {
-			    lines.add(line);
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		@Test
+		void test05_003() {
+			Estadistica estadistica = new Estadistica();
+			ProcesadorDatos procesador = new ProcesadorDatos();
+
+			assertThrows(Exception.class, ()->procesador.guardarEstadistica(null));
 		}
-		
-		boolean seHaVueltoAEscribir = false;
-		
-		for(int i = 0; i < lines.size(); i++) {
-			if(lines.get(i).equals("0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110")) {
-				assertEquals("id,dni,fecha,hora,maxfreq,minfreq,mediafreq,q1freq,q1freq,q2freq,maxtemp,mintemp,mediatemp,q1temp,q2temp,q3temp,maxten,minten,mediaten,q1ten,q2ten,q3ten",
-						lines.get(i - 1));
-				assertEquals("0002,12345678A,02/03/2019,14:00,110,110,110,110,110,110,37.5,36.5,37.0,37.1,37.1,37.1,110,110,110,110,110,110", lines.get(i));
-				assertEquals(seHaVueltoAEscribir, false);
-				seHaVueltoAEscribir = true;
-			}
-		}
-		*/
-	}
 }

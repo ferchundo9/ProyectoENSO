@@ -11,15 +11,16 @@ import interfaces.*;
 import clases.*;
 import junit.framework.Assert;
 
-public class RecibirDatosInstantaneos {
-	
+public class ModificarDatosPaciente {
+
 	@Test
-	void CP_02_0001() {
+	void CP_08_0001() {
+
 		String DNI = "34567898B";
 		String Nombre = "Unai";
 		String Apellidos = "Vázquez Vázquez";
 		String FechaNacimiento = "16/02/1998";
-		String Descripcion = "Gran deportista";
+		String Descripcion = "Deportista mediocre";
 		String enfermedad = "Insuficiencia respiratoria";
 		String tratamiento = "Bombona de oxigeno";
 		boolean bolFeq = true;
@@ -29,29 +30,37 @@ public class RecibirDatosInstantaneos {
 		ArrayList<Sensores> sensores = new ArrayList<>();
 		sensores.add(sensor);
 		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
-		DatosPaciente dato = new DatosPaciente(35, 39.5, "12/17", "14:00");
-		datospacientes.add(dato);
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+			
+		GestorPacientes gestor=new GestorPacientes();
+		gestor.modificarDatos(paciente);
 		
-		ProcesadorDatos es = new ProcesadorDatos();
-		es.recibirDatos(paciente);
-		List<Alarma> array =es.enviarAlarmasActivas(DNI);
-		assertNotEquals(0, array.size());
-		assertEquals("14:00", array.get(array.size()-1).getHora());
-		assertEquals("moderada", array.get(array.size()-1).getGravedad());
+		ArrayList<Paciente> array =gestor.leerpacientes();
+		for(int i=0; i<array.size(); i++) {
+			if(array.get(i).getDNI().equals(DNI)) {
+				assertEquals("Unai", array.get(i).getNombre());
+				assertEquals("Vázquez Vázquez", array.get(i).getApellidos());
+				assertEquals("16/02/1998", array.get(i).getFechaNacimiento());
+				assertEquals("Insuficiencia respiratoria", array.get(i).getEnfermedad());
+				assertEquals("Bombona de oxigeno", array.get(i).getTratamiento());
+				assertEquals("Deportista mediocre", array.get(i).getDescripcion());
+			}
+		}
 		
+
 	}
 
 	@Test
-	void CP_02_0002() {
-		String DNI = "11111111B";
-		String Nombre = "NoRegistrado";
-		String Apellidos = "NoRegistrado";
-		String FechaNacimiento = "10/02/1998";
-		String Descripcion = "NoRegistrado";
-		String enfermedad = "NoRegistrado";
-		String tratamiento = "NoRegistrado";
+	void CP_08_0002() {
+		
+		String DNI = "34567898V";
+		String Nombre = "Xose";
+		String Apellidos = "Castelao Vázquez";
+		String FechaNacimiento = "16/02/1998";
+		String Descripcion = "Deportista mediocre";
+		String enfermedad = "Insuficiencia respiratoria";
+		String tratamiento = "Bombona de oxigeno";
 		boolean bolFeq = true;
 		boolean bolTemp = true;
 		boolean bolTen = true;
@@ -61,15 +70,17 @@ public class RecibirDatosInstantaneos {
 		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
+			
+		GestorPacientes gestor=new GestorPacientes();
+		assertThrows(Exception.class, ()->gestor.modificarDatos(paciente));
 		
-		ProcesadorDatos es = new ProcesadorDatos();
-		
-		assertThrows(Exception.class, ()->es.recibirDatos(paciente));
 	}
 
 	@Test
-	void CP_02_0003() {
-		ProcesadorDatos es = new ProcesadorDatos();
-		assertThrows(Exception.class, ()->es.recibirDatos(null));
+	void CP_08_0003() {
+		GestorPacientes gestor=new GestorPacientes();
+		assertThrows(Exception.class, ()->gestor.modificarDatos(null));
 	}
+	
+
 }

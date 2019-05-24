@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class DarAltaPaciente {
 	
 	@Test
-	void test07_001() {
+	void CP_07_0001() {
 		
 		String DNI = "34567898B";
 		String Nombre = "Unai";
@@ -36,12 +36,13 @@ public class DarAltaPaciente {
 		gestor.darDeAlta(paciente);
 		
 		ArrayList<Paciente> pacientes =gestor.leerpacientes();
-		assertSame(paciente, pacientes.get(pacientes.size()-1));
+		
+		assertEquals(paciente.getDNI(), pacientes.get(pacientes.size()-1).getDNI());
 		
 	}
 	
 	@Test
-	void test07_002() {
+	void CP_07_0002() {
 		String DNI = "34567898B";
 		String Nombre = "Unai";
 		String Apellidos = "Vázquez Vázquez";
@@ -65,7 +66,7 @@ public class DarAltaPaciente {
 	}
 	
 	@Test
-	void test07_003() {
+	void CP_07_0003() {
 		
 		GestorPacientes gestor=new GestorPacientes();
 		assertThrows(Exception.class, ()->gestor.darDeAlta(null));
