@@ -87,7 +87,7 @@ public class EnviarDatos {
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
 		almacen.recibirDatos(paciente);
 		List<DatosPaciente> datos= almacen.enviarDatos("12:01","23:59", DNI);
-		assertTrue(datos.size()!=0);
+		assertTrue(datos.size()==0);
 	}
 
 	

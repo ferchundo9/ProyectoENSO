@@ -45,7 +45,7 @@ public class DarDeBaja {
 				existe = true;
 			}
 		}
-		assertTrue(existe);
+		assertTrue(!existe);
 	}
 	@Test
 	public void test2() {
@@ -106,7 +106,7 @@ public class DarDeBaja {
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
 		gestorPacientes.darDeAlta(paciente);
 		gestorPacientes.darDeAlta(paciente2);
-		gestorPacientes.darDeBaja(DNI2);
+		gestorPacientes.darDeBaja(DNI);
 		ArrayList<Paciente> pacientes = gestorPacientes.leerpacientes();
 		boolean existe = false;
 		for (Paciente paciente1 : pacientes) {
