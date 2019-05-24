@@ -33,12 +33,9 @@ public class RecibirDatosInstantaneos {
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
 		
 		ProcesadorDatos es = new ProcesadorDatos();
+		es.recibirDatos(paciente);
 		
-		try {
-			es.recibirDatos(paciente);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	@Test
@@ -62,24 +59,12 @@ public class RecibirDatosInstantaneos {
 		
 		ProcesadorDatos es = new ProcesadorDatos();
 		
-		try {
-			es.recibirDatos(paciente);
-			fail("No ha lanzado excepción");
-		} catch (Exception e) {
-			assertEquals(1, 1);	// Se lanzó excepción = éxito
-		}
+		assertThrows(Exception.class, ()->es.recibirDatos(paciente));
 	}
 
 	@Test
 	void test_02_0003() {
 		ProcesadorDatos es = new ProcesadorDatos();
-		Paciente paciente = null;
-
-		try {
-			es.recibirDatos(paciente);
-			fail("No ha lanzado excepción");
-		} catch (Exception e) {
-			assertEquals(1, 1);	// Se lanzó excepción = éxito
-		}
+		assertThrows(Exception.class, ()->es.recibirDatos(null));
 	}
 }

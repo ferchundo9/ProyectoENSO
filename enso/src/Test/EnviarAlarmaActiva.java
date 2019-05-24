@@ -21,8 +21,8 @@ public class EnviarAlarmaActiva {
 
 		assertNotEquals(0, real.size());
 		assertEquals("45961900B", real.get(0).getDniPaciente());
-		assertEquals("Alta", real.get(0).getGravedad());
 		assertEquals("14:00", real.get(0).getHora());
+		assertEquals("Alta", real.get(0).getGravedad());
 
 	}
 
@@ -44,6 +44,28 @@ public class EnviarAlarmaActiva {
 	void test06_004() {
 		ProcesadorDatos procesador = new ProcesadorDatos();
 		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(null));
+	}
+	
+	@Test
+	void test06_005() {
+		
+		String DNI = "45961900B";
+		ProcesadorDatos procesador = new ProcesadorDatos();
+		ArrayList<Alarma> array = (ArrayList<Alarma>) procesador.enviarAlarmasActivas(DNI);
+		
+		int contador=0;
+		
+		assertNotEquals(0, array.size());
+		for(int i=0; i<array.size(); i++) {
+			for(int j=0; j<array.size(); j++) {
+				if(array.get(i).getHora().equals(array.get(j).getHora()) && array.get(i).getGravedad().equals(array.get(j).getGravedad())) {
+					contador++;
+				}
+			}
+		}
+		
+		assertEquals(contador, array.size());
+		
 	}
 	
 }

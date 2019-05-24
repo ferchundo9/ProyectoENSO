@@ -26,8 +26,8 @@ public class EnviarDatosTemporales {
 		assertEquals("90", real.get(0).getTension());			
 		assertEquals("12:15", real.get(0).getHora());
 		assertEquals(110, real.get(1).getFrecuenciaCardiaca());
-		assertEquals(25.0, real.get(1).getTemperatura());
-		assertEquals("90", real.get(1).getTension());			
+		assertEquals(24.0, real.get(1).getTemperatura());
+		assertEquals("80", real.get(1).getTension());			
 		assertEquals("12:30", real.get(1).getHora());
 
 	}
@@ -109,7 +109,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -119,7 +119,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -129,7 +129,7 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		assertThrows(Exception.class,() -> almacen.enviarDatos(null, horaFin, DNI));
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, horaFin, DNI));
 	}
 
 	@Test
@@ -138,7 +138,31 @@ public class EnviarDatosTemporales {
 		String DNI = "45961900B";
 
 		AlmacenDatos almacen = new AlmacenDatos();
-		assertThrows(Exception.class,() -> almacen.enviarDatos(null, null, DNI));
+		assertThrows(Exception.class,() -> almacen.enviarDatos(horaInicio, null, DNI));
+	}
+	
+	@Test
+	void test03_013() {
+		String horaInicio = "12:00";
+		String horaFin = "13:00";
+		String DNI = "45961900B";
+		
+		AlmacenDatos almacen = new AlmacenDatos();
+		List<DatosPaciente> array = almacen.enviarDatos(horaInicio, horaFin, DNI);
+		
+		int contador=0;
+		
+		for(int i=0; i<array.size(); i++) {
+			for(int j=0; j<array.size();j++) {
+				if(array.get(i).getHora().equals(array.get(j).getHora())) {
+					contador++;
+				}
+			}
+		}
+		//Si las concidencias de dos datos iguales solo son igual al tamaño del array
+		//quiere decir que no hay datos duplicados, ya que los datos duplicados encontrados
+		//son los mismos al recorrer dos veces el array
+		assertEquals(contador, array.size());
 	}
 
 }

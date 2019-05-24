@@ -54,9 +54,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -65,9 +63,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -75,9 +71,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(null, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(null, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -86,9 +80,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "2019/03/03";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -97,9 +89,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "54/03/2019";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -108,9 +98,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/43/2019";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -119,9 +107,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/1789";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -129,9 +115,7 @@ public class EnviarEstadisticas {
 		String DNI = "45961900B";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, null, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, null, fechaFin));
 	}
 
 	@Test
@@ -140,9 +124,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "04/2019/05";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -151,9 +133,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "43/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -162,9 +142,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/54/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -173,9 +151,7 @@ public class EnviarEstadisticas {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/1812";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()-> procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin));
 	}
 
 	@Test
@@ -183,8 +159,29 @@ public class EnviarEstadisticas {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
-		List<Estadistica> real = procesador.enviarEstadisticas(DNI, fechaInicio, null);
-
-		assertEquals(0, real.size());
+		assertThrows(Exception.class, ()->procesador.enviarEstadisticas(DNI, fechaInicio, null));
+	}
+	
+	@Test
+	void test04_015() {
+		String DNI = "45961900B";
+		String fechaInicio = "03/03/2019";
+		String fechaFin = "05/04/2019";
+		ProcesadorDatos procesador = new ProcesadorDatos();
+		List<Estadistica> array = procesador.enviarEstadisticas(DNI, fechaInicio, fechaFin);
+		
+		int contador=0;
+		
+		assertNotEquals(0, array.size());
+		for(int i=0; i<array.size(); i++) {
+			for(int j=0; j<array.size(); j++) {
+				if(array.get(i).getIdxEstadistic().equals(array.get(j).getIdxEstadistic())) {
+					contador++;
+				}
+			}
+		}
+		
+		assertEquals(contador, array.size());
+		
 	}
 }
