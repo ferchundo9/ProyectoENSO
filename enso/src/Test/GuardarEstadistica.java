@@ -111,7 +111,7 @@ class GuardarEstadistica {
 		}
 		
 		@Test
-		void test05_003() {
+		void CP_05_003() {
 			Estadistica estadistica = new Estadistica();
 			ProcesadorDatos procesador = new ProcesadorDatos();
 
