@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class EnviarAlarmaActiva {
 
 	@Test
-	void test06_001() {
+	void CP_06_0001() {
 		String DNI = "45961900B";
 		ProcesadorDatos procesador = new ProcesadorDatos();
 		ArrayList<Alarma> real = (ArrayList<Alarma>) procesador.enviarAlarmasActivas(DNI);
@@ -27,27 +27,27 @@ public class EnviarAlarmaActiva {
 	}
 
 	@Test
-	void test06_002() {
+	void CP_06_0002() {
 		String DNI = "Ola3647282812";
 		ProcesadorDatos procesador = new ProcesadorDatos();
 		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(DNI));
 	}
 
 	@Test
-	void test06_003() {
+	void CP_06_0003() {
 		String DNI = "45958207U";
 		ProcesadorDatos procesador = new ProcesadorDatos();
 		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(DNI));
 	}
 	
 	@Test
-	void test06_004() {
+	void CP_06_0004() {
 		ProcesadorDatos procesador = new ProcesadorDatos();
 		assertThrows(Exception.class, ()->procesador.enviarAlarmasActivas(null));
 	}
 	
 	@Test
-	void test06_005() {
+	void CP_06_0005() {
 		
 		String DNI = "45961900B";
 		ProcesadorDatos procesador = new ProcesadorDatos();

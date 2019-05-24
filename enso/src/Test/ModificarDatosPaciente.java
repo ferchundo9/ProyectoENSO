@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class ModificarDatosPaciente {
 
 	@Test
-	void test08_001() {
+	void CP_08_0001() {
 
 		String DNI = "34567898B";
 		String Nombre = "Unai";
@@ -52,7 +52,7 @@ public class ModificarDatosPaciente {
 	}
 
 	@Test
-	void test08_002() {
+	void CP_08_0002() {
 		
 		String DNI = "34567898V";
 		String Nombre = "Xose";
@@ -77,7 +77,7 @@ public class ModificarDatosPaciente {
 	}
 
 	@Test
-	void test08_003() {
+	void CP_08_0003() {
 		GestorPacientes gestor=new GestorPacientes();
 		assertThrows(Exception.class, ()->gestor.modificarDatos(null));
 	}

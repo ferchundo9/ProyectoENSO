@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class DarDeBajaPaciente {
 
 	@Test
-	void test08_001() {
+	void CP_08_0001() {
 		String DNI = "45961900B";
 		GestorPacientes gestor=new GestorPacientes();
 		gestor.darDeBaja(DNI);
@@ -28,7 +28,7 @@ public class DarDeBajaPaciente {
 	}
 
 	@Test
-	void test08_002() {
+	void CP_08_0002() {
 		String DNI = "459B";
 		GestorPacientes gestor=new GestorPacientes();
 		gestor.darDeBaja(DNI);
@@ -37,7 +37,7 @@ public class DarDeBajaPaciente {
 	}
 
 	@Test
-	void test08_003() {
+	void CP_08_0003() {
 		String DNI = "45961900Ñ";
 		GestorPacientes gestor=new GestorPacientes();
 
@@ -46,7 +46,7 @@ public class DarDeBajaPaciente {
 	
 	
 	@Test
-	void test08_004() {
+	void CP_08_0004() {
 		GestorPacientes gestor=new GestorPacientes();
 
 		assertThrows(Exception.class,() -> gestor.darDeBaja(null));

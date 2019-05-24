@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class EnviarDatosTemporales {
 
 	@Test
-	void test03_001() {
+	void CP_03_0001() {
 		String DNI = "45961900B";
 		String horaInicio = "12:00";
 		String horaFin = "13:00";
@@ -33,7 +33,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_002() {
+	void CP_03_0002() {
 		String DNI = "450B";
 		String horaInicio = "12:00";
 		String horaFin = "13:00";
@@ -43,7 +43,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_003() {
+	void CP_03_0003() {
 		String DNI = "45961900Ñ";
 		String horaInicio = "12:00";
 		String horaFin = "13:00";
@@ -54,7 +54,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_004() {
+	void CP_03_0004() {
 		String horaInicio = "12:00";
 		String horaFin = "13:00";
 
@@ -64,7 +64,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_005() {
+	void CP_03_0005() {
 		String DNI = "45961900B";
 		String horaInicio = "12:24:45";
 		String horaFin = "13:00";
@@ -74,7 +74,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_006() {
+	void CP_03_0006() {
 		String DNI = "45961900B";
 		String horaInicio = "32:34";
 		String horaFin = "13:00";
@@ -84,7 +84,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_007() {
+	void CP_03_0007() {
 		String DNI = "45961900B";
 		String horaInicio = "12:69";
 		String horaFin = "13:00";
@@ -94,7 +94,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_008() {
+	void CP_03_0008() {
 		String DNI = "45961900B";
 		String horaFin = "13:00";
 
@@ -103,7 +103,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_009() {
+	void CP_03_0009() {
 		String horaInicio = "12:00";
 		String horaFin = "13:42:54:34";
 		String DNI = "45961900B";
@@ -113,7 +113,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_010() {
+	void CP_03_0010() {
 		String horaInicio = "12:00";
 		String horaFin = "53:42";
 		String DNI = "45961900B";
@@ -123,7 +123,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_011() {
+	void CP_03_0011() {
 		String horaInicio = "12:00";
 		String horaFin = "13:89";
 		String DNI = "45961900B";
@@ -133,7 +133,7 @@ public class EnviarDatosTemporales {
 	}
 
 	@Test
-	void test03_012() {
+	void CP_03_0012() {
 		String horaInicio = "12:00";
 		String DNI = "45961900B";
 
@@ -142,7 +142,7 @@ public class EnviarDatosTemporales {
 	}
 	
 	@Test
-	void test03_013() {
+	void CP_03_0013() {
 		String horaInicio = "12:00";
 		String horaFin = "13:00";
 		String DNI = "45961900B";

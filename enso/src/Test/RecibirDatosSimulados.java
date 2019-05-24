@@ -17,7 +17,7 @@ import junit.framework.Assert;
 class RecibirDatosSimulados {
 
 	@Test
-	void test01_004() {
+	void CP_01_0004() {
 		String DNI = "23415463F";
 		String Nombre = "Santiago";
 		String Apellidos = "Abascal";
@@ -73,7 +73,7 @@ class RecibirDatosSimulados {
 	}*/
 
 	@Test
-	void test01_001() {
+	void CP_01_0001() {
 		String DNI = "45961900B";
 		String Nombre = "Diego";
 		String Apellidos = "Varela Seijas";
@@ -104,7 +104,7 @@ class RecibirDatosSimulados {
 	}
 
 	@Test
-	void test01_002() {
+	void CP_01_0002() {
 		String DNI = "35567878D";
 		String Nombre = "Gonzalo";
 		String Apellidos = "Varela Seijas";
@@ -133,7 +133,7 @@ class RecibirDatosSimulados {
 	}
 	
 	@Test
-	void test01_003() {
+	void CP_01_0003() {
 
 		AlmacenDatos almacen = new AlmacenDatos();
 		Paciente paciente = null;

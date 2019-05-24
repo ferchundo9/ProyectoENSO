@@ -17,7 +17,7 @@ import clases.ProcesadorDatos;
 class GuardarEstadistica {
 
 	@Test
-	void test05_001() {
+	void CP_05_0001() {
 		String id = "0002";
 		String dni_paciente = "12345678A";
 		String fecha = "02/03/2019";
@@ -78,7 +78,7 @@ class GuardarEstadistica {
 	
 	
 	@Test
-	void test05_002() {
+	void CP_05_0002() {
 		
 		String id = "0002";
 		String dni_paciente = "12345678A";

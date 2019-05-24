@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class RecibirDatosInstantaneos {
 	
 	@Test
-	void test_02_0001() {
+	void CP_02_0001() {
 		String DNI = "34567898B";
 		String Nombre = "Unai";
 		String Apellidos = "Vázquez Vázquez";
@@ -44,7 +44,7 @@ public class RecibirDatosInstantaneos {
 	}
 
 	@Test
-	void test_02_0002() {
+	void CP_02_0002() {
 		String DNI = "11111111B";
 		String Nombre = "NoRegistrado";
 		String Apellidos = "NoRegistrado";
@@ -68,7 +68,7 @@ public class RecibirDatosInstantaneos {
 	}
 
 	@Test
-	void test_02_0003() {
+	void CP_02_0003() {
 		ProcesadorDatos es = new ProcesadorDatos();
 		assertThrows(Exception.class, ()->es.recibirDatos(null));
 	}

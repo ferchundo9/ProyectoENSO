@@ -14,7 +14,7 @@ import junit.framework.Assert;
 public class EnviarEstadisticas {
 
 	@Test
-	void test04_001() {
+	void CP_04_0001() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
@@ -49,7 +49,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_002() {
+	void CP_04_0002() {
 		String DNI = "4500B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
@@ -58,7 +58,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_003() {
+	void CP_04_0003() {
 		String DNI = "45961900Ñ";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
@@ -67,7 +67,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_004() {
+	void CP_04_0004() {
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
@@ -75,7 +75,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_005() {
+	void CP_04_0005() {
 		String DNI = "45961900B";
 		String fechaInicio = "2019/03/03";
 		String fechaFin = "05/04/2019";
@@ -84,7 +84,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_006() {
+	void CP_04_0006() {
 		String DNI = "45961900B";
 		String fechaInicio = "54/03/2019";
 		String fechaFin = "05/04/2019";
@@ -93,7 +93,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_007() {
+	void CP_04_0007() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/43/2019";
 		String fechaFin = "05/04/2019";
@@ -102,7 +102,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_008() {
+	void CP_04_0008() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/1789";
 		String fechaFin = "05/04/2019";
@@ -111,7 +111,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_009() {
+	void CP_04_0009() {
 		String DNI = "45961900B";
 		String fechaFin = "05/04/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
@@ -119,7 +119,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_010() {
+	void CP_04_0010() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "04/2019/05";
@@ -128,7 +128,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_011() {
+	void CP_04_0011() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "43/04/2019";
@@ -137,7 +137,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_012() {
+	void CP_04_0012() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/54/2019";
@@ -146,7 +146,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_013() {
+	void CP_04_0013() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/1812";
@@ -155,7 +155,7 @@ public class EnviarEstadisticas {
 	}
 
 	@Test
-	void test04_014() {
+	void CP_04_0014() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		ProcesadorDatos procesador = new ProcesadorDatos();
@@ -163,7 +163,7 @@ public class EnviarEstadisticas {
 	}
 	
 	@Test
-	void test04_015() {
+	void CP_04_0015() {
 		String DNI = "45961900B";
 		String fechaInicio = "03/03/2019";
 		String fechaFin = "05/04/2019";
