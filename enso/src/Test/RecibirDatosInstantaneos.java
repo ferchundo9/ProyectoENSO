@@ -29,12 +29,17 @@ public class RecibirDatosInstantaneos {
 		ArrayList<Sensores> sensores = new ArrayList<>();
 		sensores.add(sensor);
 		ArrayList<DatosPaciente> datospacientes = new ArrayList<>();
+		DatosPaciente dato = new DatosPaciente(35, 39.5, "12/17", "14:00");
+		datospacientes.add(dato);
 		Paciente paciente = new Paciente(DNI, Nombre, Apellidos, FechaNacimiento, Descripcion, enfermedad, tratamiento,
 				bolFeq, bolTemp, bolTen, sensores, datospacientes);
 		
 		ProcesadorDatos es = new ProcesadorDatos();
 		es.recibirDatos(paciente);
-		
+		List<Alarma> array =es.enviarAlarmasActivas(DNI);
+		assertNotEquals(0, array.size());
+		assertEquals("14:00", array.get(array.size()-1).getHora());
+		assertEquals("moderada", array.get(array.size()-1).getGravedad());
 		
 	}
 
